@@ -586,10 +586,10 @@ h1.logo-text a {
   color: #333333;
   display: block;
   font-family: 'Lato', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 1px;
   line-height: 1.4em;
-  padding: 8px 18px;
+  padding: 8px 10px;
   text-decoration: none;
   margin: 1px;
   z-index: 1;
