@@ -46,8 +46,8 @@ body {
 }
 .container {
   max-width: 1080px;
-  padding-left: 10px;                 /* Edited this */
-  padding-right: 10px;                /* Edited this */
+  padding-left: 0px;                 /* Edited this */
+  padding-right: 0px;                /* Edited this */
   width: 100%;
 }
 .container.no-padding {
