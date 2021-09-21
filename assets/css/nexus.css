@@ -19,7 +19,7 @@ TABLE OF CONTENTS
 	- Testimonials
 	- Accordions
 	- Tabs
-	- Progress Bars 
+	- Progress Bars
 	- Panels
 	- Social Icons
 	- Carousel
@@ -46,8 +46,8 @@ body {
 }
 .container {
   max-width: 1080px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;                 /* Edited this */
+  padding-right: 10px;                /* Edited this */
   width: 100%;
 }
 .container.no-padding {
@@ -881,7 +881,7 @@ h1.logo-text a {
 .slicknav_menu {
   *zoom: 1;
 }
-/* 
+/*
     User Default Style
     Change the following styles to modify the appearance of the menu.
 */

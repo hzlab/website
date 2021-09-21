@@ -728,8 +728,8 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0px;         /* Edited this */
+  padding-right: 0px;        /* Edited this */
 }
 @media (min-width: 768px) {
   .container {
