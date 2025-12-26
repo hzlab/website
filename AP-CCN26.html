@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AP-CCN26</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for map icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            background: #1C2541;
+            color: #fff;
+            padding: 1.5rem;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            position: relative;
+            background: url('images/Singapore_header_freepik.jpg') center/cover no-repeat;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+            padding: 4rem 1rem;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero h2,
+        .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Register Button in Hero */
+        .register-btn,
+        #submitPoster {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1C2541;
+            background-color: #E9A547;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s;
+            position: relative;
+            z-index: 2;
+            text-shadow: none;
+            border: none;
+            /* remove default button border */
+            box-shadow: none;
+            /* remove default shadow */
+            outline: none;
+            /* remove focus outline */
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #D39E34;
+        }
+
+        #submitPoster:hover {
+            background-color: #D39E34;
+        }
+
+        .section {
+            padding: 2rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section p {
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .details,
+        .schedule,
+        .contacts {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            row-gap: 1rem;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .detail-item,
+        .schedule-item,
+        .contact-item {
+            background: #fff;
+            border-radius: 15px;
+            /* rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            width: 100%;
+            /* full width of container */
+            max-width: 600px;
+            /* caps at 600px on large screens */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 1rem auto;
+            /* center card on page */
+            box-sizing: border-box;
+            /* ensures padding is included in width */
+        }
+
+        .detail-item h4,
+        .schedule-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+        }
+
+        .detail-item p,
+        .schedule-item p,
+        .contact-item p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+
+        .map-link a {
+            text-decoration: none;
+            color: #1C2541;
+            font-weight: 500;
+            margin-left: 0.3rem;
+        }
+
+        .map-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1C2541;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #E9A547;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>AP-CCN26</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#venue">Venue</a>
+                <a href="#program">Program</a>
+                <a href="#registration">Registration</a>
+                <a href="#committee">Committee</a>
+                <a href="#sponsor">Sponsor</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <h2>2026 Asia-Pacific Computational and Cognitive Neuroscience Conference (AP-CCN26)</h2>
+        <p>July 27-28, 2026<br>Singapore</p>
+        <a href="https://forms.office.com/r/CtLx5CBiS4" target="_blank" class="register-btn">Register Now</a>
+    </section>
+
+    <section id="about" class="section">
+        <h3>About AP-CCN26</h3>
+        <p>
+            Computational neuroscience has advanced rapidly in recent years owing to the availability of the sheer
+            amount of neural recordings and connectomic data. It is the perfect time for developing a collaborative
+            forum that promotes research in computational neuroscience in the Asia-Pacific area. After a thorough
+            discussion among several researchers from different Asian countries, we (the organization committee) decided
+            to host the Asia-Pacific Computational and Cognitive Neuroscience (AP-CCN) conference. The mission of the
+            AP-CCN Conference is to promote computational neuroscience, and to facilitate interactions and
+            collaborations between theoreticians and experimentalists.
+        </p>
+    </section>
+
+    <section id="venue" class="section">
+        <h3>Venue</h3>
+        <div class="detail-item">
+            <h4>MD6 LT35, National University of Singapore</h4>
+            <p>14 Medical Dr, Singapore 117599</p>
+            <p class="map-link">
+                <i class="fa-solid fa-location-dot"></i>
+                <a
+                    href="https://www.google.com/maps/place/MD6+-+Centre+for+Translational+Medicine/@1.2953483,103.7816915,17z/data=!3m1!4b1!4m6!3m5!1s0x31da1a51363c2731:0xc4627bf2b73714bf!8m2!3d1.2953483!4d103.7816915!16s%2Fg%2F11byts17wh?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D">Google
+                    Maps</a>
+            </p>
+        </div>
+    </section>
+
+    <section id="program" class="section">
+        <h3>Program</h3>
+        <h4>
+            <p style="text-align: center"><a href="./APCCN25/AP-CCN25-booklet.pdf">Program Booklet (Available Soon)</a>
+            </p>
+        </h4>
+        <div class="schedule">
+            <div class="schedule-item">
+                <h4>July 27th (Mon)</h4>
+                <p><em>-- Available Soon --</em></p>
+                <!-- <p>13:00-14:00, Shun-ichi Amari (Teikyo U) [Keynote]</p>
+            <p>14:00-15:00, Yu-Wei Wu (Academia Sinica)</p>
+            <p>15:00-15:30, Coffee break</p>
+            <p>15:30-16:30, James Pang (Monash U)</p>
+            <p>16:30-17:30, Tianchu Zeng (NUS)</p>
+            <p>17:30-18:30, Poster presentation</p> -->
+            </div>
+            <div class="schedule-item">
+                <h4>July 28th (Tue)</h4>
+                <p><em>-- Available Soon --</em></p>
+                <!-- <p>09:00-10:00, Juan Helen Zhou (NUS)</p>
+            <p>10:00-10:30, Coffee break</p>
+            <p>10:30-11:30, Yu Takagi (NIT)</p>
+            <p>11:30-12:30, James Roberts (QIMR Berghofer)</p>
+            <p>12:30-13:30, Lunch meeting</p>
+            <p>13:30-14:30, Jun Tani (OIST)</p>
+            <p>14:30-15:30, Ching-Che Charng (NTHU)</p>
+            <p>15:30-16:00, Coffee break</p>
+            <p>16:00-17:00, Choong-Wan Woo (SKKU)</p>
+            <p>17:30-19:30, Reception (Invited speakers)</p> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="section">
+        <h3>Registration</h3>
+        <div class="detail-item"
+            style="max-width: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <p>Kindly register below for your attendance.<br>
+                <em>You will be redirected to a Microsoft Registration Form.</em></p>
+            <a href="https://forms.office.com/r/CtLx5CBiS4" target="_blank" class="register-btn">Register Now</a>
+        </div>
+    </section>
+
+    <!-- <section id="poster-submission" class="section">
+        <h3>Poster Submission</h3>
+        <div class="detail-item" style="display: flex; flex-direction: column; align-items: center;">
+            <p>Please upload your poster file for submission.<br>
+                File naming: <strong>Name - PosterTitle.filetype</strong></p>
+            <p><em>Accepted file types: .pdf, .jpg, .jpeg, .ppt, .pptx. Please ensure your file is virus-free.</em></p>
+
+            <input type="file" id="posterFile" accept=".pdf,.jpg,.jpeg,.ppt,.pptx">
+            <p id="file-info" style="margin-top:0.5rem;"></p>
+
+            <button id="submitPoster" class="register-btn" style="margin-top: 1rem;">Submit Poster</button>
+        </div>
+    </section>
+
+
+    <script>
+        const posterInput = document.getElementById('posterFile');
+        const fileInfo = document.getElementById('file-info');
+        const submitBtn = document.getElementById('submitPoster');
+
+        let selectedFile = null;
+
+        posterInput.addEventListener('change', (e) => {
+            selectedFile = e.target.files[0];
+            if (selectedFile) {
+                fileInfo.innerHTML = `
+      Selected file: <strong>${selectedFile.name}</strong>
+      <button type="button" id="removeFile" class="register-btn" style="background-color:#D9534F; margin-left:0.5rem; padding:0.3rem 0.8rem; font-size:0.9rem;">Remove</button>
+    `;
+
+                document.getElementById('removeFile').addEventListener('click', () => {
+                    posterInput.value = '';
+                    selectedFile = null;
+                    fileInfo.innerHTML = '';
+                });
+            }
+        });
+
+        submitBtn.addEventListener('click', () => {
+            if (!selectedFile) {
+                alert('Please choose a file before submitting.');
+                return;
+            }
+
+            if (!confirm(`You are about to submit: ${selectedFile.name}.`)) {
+                return;
+            }
+
+            // Send file to Google Apps Script Web App
+            const formData = new FormData();
+            formData.append('file', selectedFile);
+
+            fetch('YOUR_WEB_APP_DEPLOYED_URL', { method: 'POST', body: formData })
+                .then(res => res.text())
+                .then(res => {
+                    alert(res);
+                    // Reset input after successful upload
+                    posterInput.value = '';
+                    selectedFile = null;
+                    fileInfo.innerHTML = '';
+                })
+                .catch(err => alert('Error uploading file: ' + err));
+        });
+    </script> -->
+
+    <section id="committee" class="section">
+        <h3>Organizing Committee</h3>
+        <p>In alphabetical order of the last names</p>
+        <div class="details">
+            <div class="detail-item">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="https://www.newcastle.edu.au/profile/michael-breakspear">Michael Breakspear</a>,
+                        University of Newcastle, Australia</li>
+                    <li><a href="https://bcs.kaist.ac.kr/sub020101/view/id/118">Jaeseung Jeong</a>, KAIST, Korea</li>
+                    <li><a href="https://life.nthu.edu.tw/~cclo/">Chung-Chuan Lo</a>, National Tsing Hua University,
+                        Taiwan</li>
+                    <li><a href="https://cbs.riken.jp/en/faculty/t.toyoizumi/">Taro Toyoizumi</a>, RIKEN Center for
+                        Brain Science, Japan</li>
+                    <li><a href="https://as.nyu.edu/faculty/xiaojing-wang.html">Xiao-Jing Wang</a>, New York University,
+                        USA</li>
+                    <li><a href="https://cde.nus.edu.sg/ece/staff/zhou-juan-helen/">Juan Helen Zhou</a>, National
+                        University of Singapore, Singapore</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="sponsor" class="section">
+        <h3>Sponsor</h3>
+        <div class="details">
+            <div class="detail-item">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <p><em>-- Available Soon --</em></p>
+                    <!--<li><a href="https://www.secomzaidan.jp/">SECOM Science and Technology Foundation</a><br><img src="./APCCN25/SECOM.gif"></li><br>
+            <li><a href="https://cbs.riken.jp/en/">RIKEN Center for Brain Science</a><br><img src="./APCCN25/CBS.jpg"></li> -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AP-CCN. All rights reserved. | <a href="#top">Back to Top</a></p>
+    </footer>
+
+</body>
+
+</html>
