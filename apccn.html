@@ -216,6 +216,42 @@
             color: #E9A547;
             text-decoration: none;
         }
+
+        .fixed-register-tab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #E9A547;
+            color: #1C2541 !important;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 10px 25px rgba(233, 165, 71, 0.4);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+
+        .fixed-register-tab:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: #D39E34;
+            box-shadow: 0 15px 30px rgba(233, 165, 71, 0.5);
+        }
+
+
+        @media (max-width: 600px) {
+            .fixed-register-tab {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
@@ -307,8 +343,13 @@
         <h3>Registration</h3>
         <div class="detail-item"
             style="max-width: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <p>Kindly register below for your attendance.<br>
-                <em>You will be redirected to a Microsoft Registration Form.</em></p>
+            <p>
+              Kindly register below for your attendance.<br>
+              <span style="font-size:0.98rem;">
+                Registration is open to all attendees. Abstract submission is optional.
+              </span><br>
+              <em>You will be redirected to a Microsoft Registration Form.</em>
+            </p>
             <a href="https://forms.office.com/r/CtLx5CBiS4" target="_blank" class="register-btn">Register Now</a>
         </div>
     </section>
@@ -416,6 +457,10 @@
     <footer>
         <p>&copy; 2026 AP-CCN. All rights reserved. | <a href="#top">Back to Top</a></p>
     </footer>
+
+    <a href="https://forms.office.com/r/CtLx5CBiS4" target="_blank" class="fixed-register-tab">
+    <i class="fa-solid fa-paper-plane"></i> Register Now
+    </a>
 
 </body>
 
